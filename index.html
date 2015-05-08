@@ -157,7 +157,7 @@
                     OrangeJuice can be installed easily, by adding the following line to your <code class="inline">composer.json</code> file.
                     <pre class="code" data-language="html"><code >"wiretech/orange-juice": "dev-master"</code></pre>
                     After this, you will need to add the following lines to your providers and alias arrays respectively in your <code class="inline">app/config/app.php</code> file. 
-                    <pre class="code" data-language="html"><code>--- providers ---<br>'Wiretech\OrangeJuice\OrangeJuiceServiceProvider'<br><br>--- alias ---<br>'Wiretech\OrangeJuice\OrangeJuiceServiceProvider'</code></pre>
+                    <pre class="code" data-language="html"><code>--- providers ---<br>'Wiretech\OrangeJuice\OrangeJuiceServiceProvider'<br><br>--- alias ---<br>'Citrus'=>'Wiretech\OrangeJuice\Classes\Citrus'</code></pre>
                     Then, run <code class="inline">composer update</code> followed by <code class="inline">composer install</code> to install the package
                 </p>
             </div>
