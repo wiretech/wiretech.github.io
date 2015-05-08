@@ -34,6 +34,9 @@ p {
  */
 .pure-menu {
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+    position: fixed;
+    background-color: white;
+    opacity: .98;
 }
 
 
@@ -223,4 +226,22 @@ p {
     .banner-head {
         font-size: 3em;
     }
+}
+
+.code{
+    background-color: #272822;
+    color: white;
+    border-radius: 5px;
+    padding:10px;
+    font-size: 10pt;
+}
+
+code.inline{
+    background-color: #E6E6E6;
+    color: #EE6363;
+    padding: 1px;
+    padding-left: 5px;
+    padding-right: 4px;
+    border-radius: 3px;
+    font-size: 10pt;
 }
