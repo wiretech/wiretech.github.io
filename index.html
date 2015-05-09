@@ -145,7 +145,7 @@
             <div class="l-box">
                 <h3 class="information-head">The Citrus Project</h3>
                 <p>
-                    For large scale mobile and Frontend JS aps, there is a need for order and sophistication. Citrus Provides that. For Laravel users, this package is a wrapper and a formatter for backend data to be passed as either arrays or JSON. Citrus takes Laravel object data and builds it into arrays with custom indexes. Then, it will then return the data in a standard format, that never changes so that devs relying on it are never confused. <code class="inline">succes, error, cache, data</code> are the bread and butter of Citrus.
+                    For large scale mobile and Frontend JS aps, there is a need for order and sophistication. Citrus Provides that. For Laravel users, this package is a wrapper and a formatter for backend data to be passed as either arrays or JSON. Citrus takes Laravel object data and builds it into arrays with custom indexes. Then, it will then return the data in a standard format, that never changes so that devs relying on it are never confused. <code class="inline">succes, error, data</code> are the bread and butter of Citrus.
                 </p>
             </div>
         </div>
@@ -224,6 +224,64 @@
                             </tr>
                         </tbody>
                     </table>
+                    <br>
+                    This is the bread and butter of <code class="inline">Citrus</code> meaning that all responses are generated from this function
+                    <h4>Examples</h4>
+                    <hr>
+                    <pre class="code"><code>Citrus::response()</code></pre>
+                    This will return the following JSON
+<pre class="json"><code>{
+    "succes": 0,
+    "error": "An unkown error occured",
+    "cache": null,
+    "data": null
+}</code></pre>
+                    If we want to return a successful response, we would set the <code class="inline">success</code> to <code class="inline">true</code>
+                    <pre class="code"><code>Citrus::response(1, null, $data)</code></pre>
+                </p>
+            </div>
+
+            <div class="l-box">
+                <h3 class="information-head">Citrus::build()</h3>
+                <p>
+                    This is the secondary function of <code>Citrus</code> This function takes the data you have - whether it be array or object - and converts it into an array with a custom index. Great thing about this function: <strong>It's completely scalable.</strong> You can convert all of your data into one multidimensional array, with certain objects stored at custom indexes.
+                    <table class="pure-table pure-table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Param</th>
+                                <th>Required</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code class="inline">index</code></td>
+                                <td><code>true</code></td>
+                                <td><code>string</code></td>
+                                <td><code class="inline">N/A</code></td>
+                                <td>Defines the index at which your array will be created and stored</td>
+                            </tr>
+
+                            <tr>
+                                <td><code class="inline">array</code></td>
+                                <td><code>true</code></td>
+                                <td><code>array</code></td>
+                                <td><code class="inline">N/A</code></td>
+                                <td>The array you want stored</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <br>
+                    As mentioned before, the <code class="inline">build()</code> function is scalable. However, for it to work properly, it is <strong>imperative</strong> that you think of the <code class="inline">index</code> and the <code class="inline">array</code> as a pair. This function cannot accept an odd number of arguments. Ever.
+                    <h4>Example</h4>
+                    <hr>
+                    <pre class="code"><code>Citrus::build('user', $array);</code></pre>
+                    This will build an array with an index <code>user</code> where another array will be stored
+                    <pre class="code"><code>Citrus::build('user', $array, 'foo', $foo);</code></pre>
+                    This will also build one overall array but it will have two indexes: <code>user, foo</code>
                 </p>
             </div>
         </div>

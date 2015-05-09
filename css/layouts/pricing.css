@@ -236,6 +236,14 @@ p {
     font-size: 10pt;
 }
 
+.json{
+    background-color: #272822;
+    color: #f1f1f1;
+    border-radius: 5px;
+    padding:10px;
+    font-size: 10pt;
+}
+
 code.inline, p > code{
     background-color: #E6E6E6;
     color: #EE6363;
