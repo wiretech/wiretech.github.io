@@ -236,7 +236,7 @@ p {
     font-size: 10pt;
 }
 
-code.inline{
+code.inline, p > code{
     background-color: #E6E6E6;
     color: #EE6363;
     padding: 1px;
