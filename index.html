@@ -286,7 +286,7 @@
                         </tbody>
                     </table>
                     <br>
-                    As mentioned before, the <code class="inline">combine()</code> function is scalable. However, for it to work properly, it is <strong>imperative</strong> that you think of the <code class="inline">index</code> and the <code class="inline">array</code> as a pair. This function cannot accept an odd number of arguments. Ever.
+                    As mentioned before, the <code class="inline">combine()</code> function is scalable. However, for it to work properly, it is <strong>imperative</strong> that you think of the <code class="inline">index</code> and the <code class="inline">array</code> as a pair. This function can accept an odd number of arguments, but it will ignore a trailing argument without its pair.
                     <h4>Example</h4>
                     <hr>
                     <pre class="code"><code>Citrus::combine('user', $user);</code></pre>
