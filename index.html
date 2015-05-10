@@ -238,11 +238,22 @@
 }</code></pre>
                     If we want to return a successful response, we would set the <code class="inline">success</code> to <code class="inline">true</code>
                     <pre class="code"><code>Citrus::response(1, null, $data)</code></pre>
+                    This wil return the following JSON
+<pre class="json"><code>{
+    "succes": 1,
+    "error": null,
+    "cache": null,
+    "data": {
+        "message": "Everything you need to know has just been taught to you!"
+    }
+}
+    
+</code></pre>
                 </p>
             </div>
 
             <div class="l-box">
-                <h3 class="information-head">Citrus::build()</h3>
+                <h3 class="information-head">Citrus::combine()</h3>
                 <p>
                     This is the secondary function of <code>Citrus</code> This function takes the data you have - whether it be array or object - and converts it into an array with a custom index. Great thing about this function: <strong>It's completely scalable.</strong> You can convert all of your data into one multidimensional array, with certain objects stored at custom indexes.
                     <table class="pure-table pure-table-bordered">
@@ -275,13 +286,34 @@
                         </tbody>
                     </table>
                     <br>
-                    As mentioned before, the <code class="inline">build()</code> function is scalable. However, for it to work properly, it is <strong>imperative</strong> that you think of the <code class="inline">index</code> and the <code class="inline">array</code> as a pair. This function cannot accept an odd number of arguments. Ever.
+                    As mentioned before, the <code class="inline">combine()</code> function is scalable. However, for it to work properly, it is <strong>imperative</strong> that you think of the <code class="inline">index</code> and the <code class="inline">array</code> as a pair. This function cannot accept an odd number of arguments. Ever.
                     <h4>Example</h4>
                     <hr>
-                    <pre class="code"><code>Citrus::build('user', $array);</code></pre>
-                    This will build an array with an index <code>user</code> where another array will be stored
-                    <pre class="code"><code>Citrus::build('user', $array, 'foo', $foo);</code></pre>
-                    This will also build one overall array but it will have two indexes: <code>user, foo</code>
+                    <pre class="code"><code>Citrus::combine('user', $user);</code></pre>
+                    This will build an array with an index <code class="inline">user</code> where the data <code class="inline">$user</code> will be stored. After building the array, the function will then return the following JSON.
+                    <pre class="json"><code>{
+    "succes": 1,
+    "error": null,
+    "cache": null,
+    "data": {
+        "user": $user
+    }
+}</code></pre>
+                    We can also specify multiple arrays and indexes to be built. Each array and index pair must come in twos, so that if you want to define multiple indexes and data to be stored at index, it should look like this. 
+                    <pre class="code"><code>Citrus::combine($index, $foo, $index2, $foo2 ....);</code></pre>
+                    An example of this is as follows.
+                    <pre class="code"><code>Citrus::combine('user', $user, 'message', $foo);</code></pre>
+                    The responding JSON will look like this
+                    <pre class="json"><code>{
+    "succes": 1,
+    "error": null,
+    "cache": null,
+    "data": {
+        "user": $user,
+        "message": $foo
+    }
+}</code></pre>
+
                 </p>
             </div>
         </div>
