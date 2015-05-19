@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Lovely backend API Wrapper">
+<meta name="description" content="A lovely, organized and clean backend API builder and wrapper">
 
     <title>Citrus</title>
 
@@ -148,7 +148,7 @@
             <div class="l-box">
                 <h3 class="information-head" id="citrusheader">The Citrus Project</h3>
                 <p>
-                    For large scale mobile and Frontend JS aps, there is a need for order and sophistication. Citrus Provides that. For Laravel users, this package is a wrapper and a formatter for backend data to be passed as either arrays or JSON. Citrus takes Laravel object data and builds it into arrays with custom indexes. Then, it will then return the data in a standard format, that never changes so that devs relying on it are never confused. <code class="inline">succes, error, data</code> are the bread and butter of Citrus.
+                    For large scale mobile and Frontend JS aps, there is a need for order and sophistication. Citrus Provides that. For Laravel users, this package is a wrapper and a formatter for backend data to be passed as either arrays or JSON. Citrus takes Laravel object data and builds it into arrays with custom indexes. Then, it will then return the data in a standard format, that never changes so that devs relying on it are never confused. <code class="inline">success, error, data</code> are the bread and butter of Citrus.
                 </p>
             </div>
         </div>
@@ -234,7 +234,7 @@
                     <pre class="code"><code>Citrus::response()</code></pre>
                     This will return the following JSON
 <pre class="json"><code>{
-    "succes": 0,
+    "success": 0,
     "error": "An unkown error occured",
     "cache": null,
     "data": null
@@ -243,7 +243,7 @@
                     <pre class="code"><code>Citrus::response(1, null, $data)</code></pre>
                     This wil return the following JSON
 <pre class="json"><code>{
-    "succes": 1,
+    "success": 1,
     "error": null,
     "cache": null,
     "data": {
@@ -295,7 +295,7 @@
                     <pre class="code"><code>Citrus::combine('user', $user);</code></pre>
                     This will build an array with an index <code class="inline">user</code> where the data <code class="inline">$user</code> will be stored. After building the array, the function will then return the following JSON.
                     <pre class="json"><code>{
-    "succes": 1,
+    "success": 1,
     "error": null,
     "cache": null,
     "data": {
@@ -308,7 +308,7 @@
                     <pre class="code"><code>Citrus::combine('user', $user, 'message', $foo);</code></pre>
                     The responding JSON will look like this
                     <pre class="json"><code>{
-    "succes": 1,
+    "success": 1,
     "error": null,
     "cache": null,
     "data": {
